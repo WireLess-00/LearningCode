@@ -25,6 +25,6 @@ int main(void)
 
 /*
 var = var + 5; -> var += 5; (raccourci pour tout operator)
-++ = + 1
+++ = + 1 Si à droite de la var s'incrémente apres sinon avant
 -- = - 1
 */
