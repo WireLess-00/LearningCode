@@ -10,6 +10,6 @@ int main (void)
     printf("Entrez la valeur de la seconde partie de l'addition :\n");
     scanf("%d", &second);
     int result = first + second;
-    printf("Le résultat de l'addition %d + %d est égale a : %d\n", first, second, result);
+    printf("Le résultat de l'addition %d + %d est égale à : %d\n", first, second, result);
 }
 
