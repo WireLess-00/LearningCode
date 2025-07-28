@@ -8,4 +8,3 @@ int main(void)
     printf("Voici votre lettre en majuscule : %c\n", minuscule - 32);
     return 0;
 }
-// Essaie
