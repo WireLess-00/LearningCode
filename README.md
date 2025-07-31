@@ -1,3 +1,6 @@
+NOTES : 
+
+
 GitHub :
 
 pour commit :
@@ -14,8 +17,5 @@ mettre a jour :
 ++ :
 
 - git log
-
-Notes :
-
 - cd .. : retour
 - cd ~ : home
