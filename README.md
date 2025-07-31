@@ -3,19 +3,23 @@ NOTES :
 
 GitHub :
 
-pour commit :
+Pour commit :
 
 - git add "name.c"
 - git commit -m "message"
 
-pour envoyer sur git :
+Pour envoyer sur git :
 - git push
 
-mettre a jour : 
+Mettre a jour : 
 - git pull
+
+Conflits :
+- git push --rebase
 
 ++ :
 
 - git log
 - cd .. : retour
 - cd ~ : home
+- git status
