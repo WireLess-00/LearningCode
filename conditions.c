@@ -17,7 +17,7 @@ int main(void)
     >= = Suppérieur ou égal
     <= = Infférieur ou égalté
     != = Inégalité
-    == = Egali
+    == = Egalité
     && = Et
     || = ou 
     ? = à condition, si vrai renvoie la première valeur sinon l'autre
@@ -56,4 +56,7 @@ int main(void)
 
     return 0;
 }
-/* % = Modulo, Reste de la division entière*/
+/* 
+% = Modulo, Reste de la division entière
+Else if = Sinon si ...
+*/
