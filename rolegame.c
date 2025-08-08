@@ -13,14 +13,21 @@ Créer un jeu de rôle:
 #include <stdio.h>
 */
 
-typedef struct Roles
+typedef enum Roles
 {
-    int Ghost;
-    int Alien;
-    int Possessed;
-    int Medium;
+    Ghost,
+    Alien,
+    Possessed,
+    Medium
 
 }Roles;
+
+typedef struct Player
+{
+    unsigned char Name;
+    Roles Roles;
+
+}Player;
 
 
 int main(void)
