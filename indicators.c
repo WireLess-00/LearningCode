@@ -23,6 +23,7 @@ int /*fonction*/ main(void)/*nom de la fonction spé*/
     printf("%p\n", &tom);/*printf est une fonction*/
     
     /*
+    Indicateurs d'affichage/conversion
     
         - %hhd = char
         - %d = int

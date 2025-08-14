@@ -7,7 +7,7 @@
 // 1111 1111 0000 0000
 int main(void)
 {
-    unsigned int var = 10; /*0000 1010*/
+    unsigned int var = 10; /*0000 */
 
     unsigned char alpha = 35;
     unsigned char blue = 0;
