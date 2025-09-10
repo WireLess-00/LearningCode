@@ -33,10 +33,10 @@ typedef struct Name
 
 typedef enum Roles
 {
-    Ghost,
-    Alien,
-    Possessed,
-    Medium
+    Ghost = 0,
+    Alien = 42,
+    Possessed = 666,
+    Medium = 8
 
 }Roles;
 
@@ -67,12 +67,21 @@ int main(void)
     Player Player1;
     Player1.hp = 100;
     Player1.xp = 0;
+    Player1.attack = 10;
+    Player1.defense = 5;
     Player1.genres = 0;
+    Player1.roles = 1;
+
+    Player Enemy1;
+    Enemy1.hp = 100;
+    Enemy1.attack = 10;
+    Enemy1.defense = 5;
 
     unsigned int sure = 0;
     unsigned int yes = 1;
     unsigned int no = 2;
 
+/*
     while (Player1.genres == 0) 
     {
         printf("Choisissez votre genre :\n\n1. Gros Male\n2.Petite Femelle\n\n");
@@ -87,6 +96,7 @@ int main(void)
         {
             printf("Vous avez dit Une Petite femelle sans défense ?\n\n1.Oui\n2.Non\n\n");
         }
+
         scanf("%d",&sure);
         printf("\n");
 
@@ -185,13 +195,67 @@ int main(void)
     
     PlayerName();
     printf("\n");
+*/
 
     // if role nanan attaque et defe == x tout les role et finir avec un else ?
 
     printf("Vous êtes envoyé au Japon pour combattre Pépé Turbo qui veut éliminer Mémé Turbo, seul problème si Pépé Turbo élimine Mémé Turbo elle ne nous révélera jamais ou est cacher la deuxième boule d'Okarun.\n\n");
-    printf("Choisissez une classe pour anéantir Pépé Turbo :\n\n- Ghost\n- Alien\n- Possessed\n- Medium\n");
     
-    
+     while (Player1.roles != 0 && Player1.roles != 42  && Player1.roles != 666 && Player1.roles != 8) 
+    {
+        printf("Maintenant %c%c%c%c%c%c%c%c, choisissez une classe pour anéantir Pépé Turbo :\n\n0 - Ghost\n42 - Alien\n666- Possessed\n8 - Medium\n", Player1.name.namec1, Player1.name.namec2, Player1.name.namec3, Player1.name.namec4, Player1.name.namec5, Player1.name.namec6, Player1.name.namec7, Player1.name.namec8);
+        scanf("%d", &Player1.roles);
+        printf("\n");
+
+        if (Player1.roles == Ghost)
+        {
+            printf("Vous voulez être un Ghost ?\n\n1.Oui\n2.Non\n\n");
+        }
+
+        else if (Player1.roles == Alien)
+        {
+            printf("Vous voulez être un Alien ?\n\n1.Oui\n2.Non\n\n");
+        }
+        else if (Player1.roles == Possessed)
+        {
+            printf("Vous voulez être un Possessed ?\n\n1.Oui\n2.Non\n\n");
+        }
+        else if (Player1.roles == Medium)
+        {
+            printf("Vous voulez être un Medium ?\n\n1.Oui\n2.Non\n\n");
+        }
+
+        scanf("%d",&sure);
+        printf("\n");
+
+        if (sure == yes)
+        {
+            if (Player1.roles == Ghost) 
+            {
+                printf("Vous êtes un Ghost.\n");
+                printf("\n");
+            }
+            else if (Player1.roles == Alien) 
+            {
+                printf("Vous êtes un Alien.\n");
+                printf("\n");
+            }
+            else if (Player1.roles == Possessed) 
+            {
+                printf("Vous êtes un Possessed.\n");
+                printf("\n");
+            }
+            else if (Player1.roles == Medium) 
+            {
+                printf("Vous êtes un Medim.\n");
+                printf("\n");
+            }
+        }
+        else
+        {
+            Player1.roles = 1;
+        }
+    }
     
     
     
