@@ -61,6 +61,12 @@ typedef struct Player
 
 }Player;
 
+typedef enum Food
+{
+    Chaussonpommes =1,
+    Painraisins
+
+}Food;
 
 int main(void)
 {
@@ -80,6 +86,8 @@ int main(void)
     unsigned int sure = 0;
     unsigned int yes = 1;
     unsigned int no = 2;
+
+    Food Choicefood = 0;
 
 /*
     while (Player1.genres == 0) 
@@ -195,11 +203,10 @@ int main(void)
     
     PlayerName();
     printf("\n");
-*/
 
     // if role nanan attaque et defe == x tout les role et finir avec un else ?
 
-    printf("Vous êtes envoyé au Japon pour combattre Pépé Turbo qui veut éliminer Mémé Turbo, seul problème si Pépé Turbo élimine Mémé Turbo elle ne nous révélera jamais ou est cacher la deuxième boule d'Okarun.\n\n");
+    printf("Vous êtes envoyé au Japon sur une île pour combattre Pépé Turbo qui veut éliminer Mémé Turbo, seul problème si Pépé Turbo élimine Mémé Turbo elle ne nous révélera jamais ou est cacher la deuxième boule d'Okarun.\n\n");
     
      while (Player1.roles != 0 && Player1.roles != 42  && Player1.roles != 666 && Player1.roles != 8) 
     {
@@ -247,7 +254,7 @@ int main(void)
             }
             else if (Player1.roles == Medium) 
             {
-                printf("Vous êtes un Medim.\n");
+                printf("Vous êtes un Medium.\n");
                 printf("\n");
             }
         }
@@ -257,7 +264,128 @@ int main(void)
         }
     }
     
-    
-    
+*/
+    while (Player1.roles != 0 && Player1.roles != 42  && Player1.roles != 666 && Player1.roles != 8) 
+    {
+        printf("Maintenant %c%c%c%c%c%c%c%c, choisissez une classe pour anéantir Pépé Turbo :\n\n0 - Ghost\n42 - Alien\n666- Possessed\n8 - Medium\n", Player1.name.namec1, Player1.name.namec2, Player1.name.namec3, Player1.name.namec4, Player1.name.namec5, Player1.name.namec6, Player1.name.namec7, Player1.name.namec8);
+        printf("\n");
+        scanf("%d", &Player1.roles);
+        printf("\n");
+
+        switch (Player1.roles)
+        {
+            case Ghost:
+            printf("Vous voulez être un Ghost ?\n\n1.Oui\n2.Non\n\n");
+
+            scanf("%d", &sure);
+            printf("\n");
+
+            if (sure == yes)
+            {
+                printf("Vous êtes un Ghost.\n");
+                printf("\n");
+            }
+
+            else
+            {
+                Player1.roles = 1;
+            }
+
+            break;
+
+            case Alien:
+            printf("Vous voulez être un Alien ?\n\n1.Oui\n2.Non\n\n");
+
+            scanf("%d", &sure);
+            printf("\n");
+
+            if (sure == yes)
+            {
+                printf("Vous êtes un Alien.\n");
+                printf("\n");
+            }
+
+            else
+            {
+                Player1.roles = 1;
+            }
+
+            break;
+
+            case Possessed:
+            printf("Vous voulez être un Possessed ?\n\n1.Oui\n2.Non\n\n");
+
+            scanf("%d", &sure);
+            printf("\n");
+
+            if (sure == yes)
+            {
+                printf("Vous êtes un Possessed.\n");
+                printf("\n");
+            }
+
+            else
+            {
+                Player1.roles = 1;
+            }
+
+            break;
+
+            case Medium:
+            printf("Vous voulez être un Medium ?\n\n1.Oui\n2.Non\n\n");
+
+            scanf("%d", &sure);
+            printf("\n");
+
+            if (sure == yes)
+            {
+                printf("Vous êtes un Medium.\n");
+                printf("\n");
+            }
+
+            else
+            {
+                Player1.roles = 1;
+            }
+
+            break;
+
+            default:
+            Player1.roles = 1;
+
+            break;
+        }
+    }
+
+    while (Choicefood == 0)
+    {
+        printf ("Après ce débriefing dans l'avion, vous atterrissez et un marchand ambulant vous propose quelque chose à manger, vous choisissez :\n\n 1 - Un Chausson aux pommes\n 2 - Un Pain aux raisins\n");
+        printf("\n");
+        scanf("%d", &Choicefood);
+
+        switch (Choicefood)
+        {
+        case Chaussonpommes:
+        Player1.hp = Player1.hp - 5;
+        printf("\n");
+        printf ("Mauvais choix gourmand !, Tu perds 5 points de vie.");
+        printf("\n");
+        break;
+
+        case Painraisins:
+        Player1.hp = Player1.hp + 5;
+        printf("\n");
+        printf ("Bon choix !, Tu gagnes 5 points de vie.");
+        printf("\n");
+        break;
+        
+        default:
+        break;
+        }
+    }
+
+    printf ( "Maintenant, tu as : %dhp\n", Player1.hp);
+    printf("\n");
+
     return 0;
 }
