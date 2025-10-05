@@ -42,7 +42,7 @@ typedef enum Roles
 
 typedef enum Skills
 {
-    Skill1,
+    Skill1 = 1,
     Skill2,
     Skill3
 
@@ -54,8 +54,6 @@ typedef struct Player
     Genres genres;
     Roles roles;
     int hp;
-    int attack;
-    int defense;
     int xp;
     Skills skills;
 
@@ -73,36 +71,30 @@ int main(void)
     Player Player1;
     Player1.hp = 100;
     Player1.xp = 0;
-    Player1.attack = 10;
-    Player1.defense = 5;
     Player1.genres = 0;
     Player1.roles = 1;
 
     Player Enemy1;
     Enemy1.hp = 100;
-    Enemy1.attack = 10;
-    Enemy1.defense = 5;
 
     unsigned int sure = 0;
     unsigned int yes = 1;
     unsigned int no = 2;
 
-    Food Choicefood = 0;
+    unsigned int round = 1;
+    unsigned int choiceskill = 0;
 
-/*
+    unsigned int choicefood = 0;
+
     while (Player1.genres == 0) 
     {
-        printf("Choisissez votre genre :\n\n1. Gros Male\n2.Petite Femelle\n\n");
+        printf("Choisissez votre genre :\n\n1 - Gros Male\n2 - Petite Femelle\n\n");
         scanf("%d", &Player1.genres);
         printf("\n");
 
         if (Player1.genres == Male)
         {
-            printf("Vous avez dit Un Male virile ?\n\n1.Oui\n2.Non\n\n");
-        }
-        else if (Player1.genres == Female)
-        {
-            printf("Vous avez dit Une Petite femelle sans défense ?\n\n1.Oui\n2.Non\n\n");
+            printf("Vous avez dit Un Male virile ?\n\n1 - Oui\n2 - Non\n\n");
         }
 
         scanf("%d",&sure);
@@ -143,7 +135,7 @@ int main(void)
     getchar();
     printf("\n");
 
-    printf("Pour le moment votre pseudos se constitue de %c%c%c, Voulez vous continué ?\n\n1.Oui\n2.Non\n", Player1.name.namec1, Player1.name.namec2, Player1.name.namec3);
+    printf("Pour le moment votre pseudos se constitue de %c%c%c, Voulez vous continué ?\n\n1 - Oui\n2 - Non\n", Player1.name.namec1, Player1.name.namec2, Player1.name.namec3);
     scanf("%d",&sure);
     printf("\n");
 
@@ -153,7 +145,7 @@ int main(void)
         getchar();
         Player1.name.namec4 = getchar();
         printf("\n");
-        printf("Maintenant votre pseudo se constitue de %c%c%c%c, Voulez vous continué ?\n\n1.Oui\n2.Non\n\n", Player1.name.namec1, Player1.name.namec2, Player1.name.namec3, Player1.name.namec4);
+        printf("Maintenant votre pseudo se constitue de %c%c%c%c, Voulez vous continué ?\n\n1 - Oui\n2 - Non\n\n", Player1.name.namec1, Player1.name.namec2, Player1.name.namec3, Player1.name.namec4);
         scanf("%d",&sure);
         printf("\n");
 
@@ -163,7 +155,7 @@ int main(void)
             getchar();
             Player1.name.namec5 = getchar();
             printf("\n");
-            printf("Maintenant votre pseudo se constitue de %c%c%c%c%c, Voulez vous continué ?\n\n1.Oui\n2.Non\n\n", Player1.name.namec1, Player1.name.namec2, Player1.name.namec3, Player1.name.namec4, Player1.name.namec5);
+            printf("Maintenant votre pseudo se constitue de %c%c%c%c%c, Voulez vous continué ?\n\n1 - Oui\n2 - Non\n\n", Player1.name.namec1, Player1.name.namec2, Player1.name.namec3, Player1.name.namec4, Player1.name.namec5);
             scanf("%d",&sure);
             printf("\n");
 
@@ -173,7 +165,7 @@ int main(void)
                 getchar();
                 Player1.name.namec6 = getchar();
                 printf("\n");
-                printf("Maintenant votre pseudo se constitue de %c%c%c%c%c%c, Voulez vous continué ?\n\n1.Oui\n2.Non\n\n", Player1.name.namec1, Player1.name.namec2, Player1.name.namec3, Player1.name.namec4, Player1.name.namec5, Player1.name.namec6);
+                printf("Maintenant votre pseudo se constitue de %c%c%c%c%c%c, Voulez vous continué ?\n\n1 - Oui\n2 - Non\n\n", Player1.name.namec1, Player1.name.namec2, Player1.name.namec3, Player1.name.namec4, Player1.name.namec5, Player1.name.namec6);
                 scanf("%d",&sure);
                 printf("\n");
 
@@ -183,7 +175,7 @@ int main(void)
                     getchar();
                     Player1.name.namec7 = getchar();
                     printf("\n");
-                    printf("Maintenant votre pseudo se constitue de %c%c%c%c%c%c%c, Voulez vous continué ?\n\n1.Oui\n2.Non\n\n", Player1.name.namec1, Player1.name.namec2, Player1.name.namec3, Player1.name.namec4, Player1.name.namec5, Player1.name.namec6, Player1.name.namec7);
+                    printf("Maintenant votre pseudo se constitue de %c%c%c%c%c%c%c, Voulez vous continué ?\n\n1 - Oui\n2 - Non\n\n", Player1.name.namec1, Player1.name.namec2, Player1.name.namec3, Player1.name.namec4, Player1.name.namec5, Player1.name.namec6, Player1.name.namec7);
                     scanf("%d",&sure);
                     printf("\n");    
 
@@ -204,8 +196,7 @@ int main(void)
     PlayerName();
     printf("\n");
 
-    // if role nanan attaque et defe == x tout les role et finir avec un else ?
-
+    /*
     printf("Vous êtes envoyé au Japon sur une île pour combattre Pépé Turbo qui veut éliminer Mémé Turbo, seul problème si Pépé Turbo élimine Mémé Turbo elle ne nous révélera jamais ou est cacher la deuxième boule d'Okarun.\n\n");
     
      while (Player1.roles != 0 && Player1.roles != 42  && Player1.roles != 666 && Player1.roles != 8) 
@@ -275,117 +266,175 @@ int main(void)
         switch (Player1.roles)
         {
             case Ghost:
-            printf("Vous voulez être un Ghost ?\n\n1.Oui\n2.Non\n\n");
+                printf("Vous voulez être un Ghost ?\n\n1 - Oui\n2 - Non\n\n");
 
-            scanf("%d", &sure);
-            printf("\n");
-
-            if (sure == yes)
-            {
-                printf("Vous êtes un Ghost.\n");
+                scanf("%d", &sure);
                 printf("\n");
-            }
 
-            else
-            {
-                Player1.roles = 1;
-            }
+                if (sure == yes)
+                {
+                    printf("Vous êtes un Ghost.\n");
+                    printf("\n");
+                }
 
-            break;
+                else
+                {
+                    Player1.roles = 1;
+                }
+
+                break;
 
             case Alien:
-            printf("Vous voulez être un Alien ?\n\n1.Oui\n2.Non\n\n");
+                printf("Vous voulez être un Alien ?\n\n1 - Oui\n2 - Non\n\n");
 
-            scanf("%d", &sure);
-            printf("\n");
-
-            if (sure == yes)
-            {
-                printf("Vous êtes un Alien.\n");
+                scanf("%d", &sure);
                 printf("\n");
-            }
 
-            else
-            {
-                Player1.roles = 1;
-            }
+                if (sure == yes)
+                {
+                    printf("Vous êtes un Alien.\n");
+                    printf("\n");
+                }
 
-            break;
+                else
+                {
+                    Player1.roles = 1;
+                }
+
+                break;
 
             case Possessed:
-            printf("Vous voulez être un Possessed ?\n\n1.Oui\n2.Non\n\n");
+                printf("Vous voulez être un Possessed ?\n\n1 - Oui\n2 - Non\n\n");
 
-            scanf("%d", &sure);
-            printf("\n");
-
-            if (sure == yes)
-            {
-                printf("Vous êtes un Possessed.\n");
+                scanf("%d", &sure);
                 printf("\n");
-            }
 
-            else
-            {
-                Player1.roles = 1;
-            }
+                if (sure == yes)
+                {
+                    printf("Vous êtes un Possessed.\n");
+                    printf("\n");
+                }
 
-            break;
+                else
+                {
+                    Player1.roles = 1;
+                }
+
+                break;
 
             case Medium:
-            printf("Vous voulez être un Medium ?\n\n1.Oui\n2.Non\n\n");
+                printf("Vous voulez être un Medium ?\n\n1 - Oui\n2 - Non\n\n");
 
-            scanf("%d", &sure);
-            printf("\n");
-
-            if (sure == yes)
-            {
-                printf("Vous êtes un Medium.\n");
+                scanf("%d", &sure);
                 printf("\n");
-            }
 
-            else
-            {
+                if (sure == yes)
+                {
+                    printf("Vous êtes un Medium.\n");
+                    printf("\n");
+                }
+
+                else
+                {
+                    Player1.roles = 1;
+                }
+
+                break;
+
+                default:
                 Player1.roles = 1;
-            }
 
-            break;
-
-            default:
-            Player1.roles = 1;
-
-            break;
+                break;
         }
     }
 
-    while (Choicefood == 0)
+    while (choicefood == 0)
     {
         printf ("Après ce débriefing dans l'avion, vous atterrissez et un marchand ambulant vous propose quelque chose à manger, vous choisissez :\n\n 1 - Un Chausson aux pommes\n 2 - Un Pain aux raisins\n");
         printf("\n");
-        scanf("%d", &Choicefood);
+        scanf("%d", &choicefood);
 
-        switch (Choicefood)
+        switch (choicefood)
         {
         case Chaussonpommes:
-        Player1.hp = Player1.hp - 5;
-        printf("\n");
-        printf ("Mauvais choix gourmand !, Tu perds 5 points de vie.");
-        printf("\n");
-        break;
+            Player1.hp = Player1.hp - 5;
+            printf("\n");
+            printf ("Mauvais choix gourmand !, Tu perds 5 points de vie.");
+            printf("\n");
+            break;
 
         case Painraisins:
-        Player1.hp = Player1.hp + 5;
-        printf("\n");
-        printf ("Bon choix !, Tu gagnes 5 points de vie.");
-        printf("\n");
-        break;
-        
-        default:
-        break;
+            Player1.hp = Player1.hp + 5;
+            printf("\n");
+            printf ("Bon choix !, Tu gagnes 5 points de vie.");
+            printf("\n");
+            break;
+            
+            default:
+            break;
         }
     }
 
+    printf("\n");
     printf ( "Maintenant, tu as : %dhp\n", Player1.hp);
     printf("\n");
+
+    printf("Vous montez dans le vanne vers lequel ont vous conduit naturellement puis vous vous enfoncer dans la foret jusqu'a trouver d'étranges flaques sur le sol.\n");
+    printf("\n");
+    printf("Ces flaques sentent le Roquefort.\n");
+    printf("\n");
+    printf("Plus vous vous raprochez plus l'odeur devient insuportable.\n");
+    printf("\n");
+    printf("\n");
+    printf("\n");
+    printf("\n");
+
+    while ( Player1.hp > 0 && Enemy1.hp > 0 )
+    {
+        printf("ROUND %d :\n\n", round);
+        printf("Choisis une compétences à utiliser :\n\n 1- Attaquer (- 5 hp)\n 2- Se soigner (+5 hp) \n3 - Double attaque (-8 hp pour l'ennemi mais aussi -2 pour toi)\n");
+        scanf("%d", &choiceskill);
+
+        switch (choiceskill)
+        {
+        case Skill1:
+            Enemy1.hp = Enemy1.hp - 5;
+            printf("Bien joué, Pépé Turbo perd 5 hp !\n");
+            break;
+
+        case Skill2:
+            Player1.hp = Player1.hp + 5;
+            printf("Vous vous soignez, vous gagnez 5 hp !\n");
+            break;
+
+        case Skill3:
+            Enemy1.hp = Enemy1.hp - 8;
+            Player1.hp = Player1.hp - 2;
+            printf("Ti é un tueur, Pépé Turbo perd 8 hp, mais tu en perd 2.\n");
+            break;
+            
+            default:
+            break;
+        }
+
+        printf("Pépé Turbo vous flanque la paté, vous perdez 5 hp...\n");
+        Player1.hp = Player1.hp - 5;
+        
+        if (Enemy1.hp > 0)
+            {
+                printf("Vous avez tuer Pépé Turbo, Fékicitations !\n");
+                Player1.xp = Player1.xp + 100;
+                printf("Vous avez gagnez 100 points de Xp !\n");
+            }
+        else
+            {
+                printf("Vous avez perdue :C Vous êtes surement gay mais ce n'est pas grave.\n");
+            }
+
+        printf("FIN DU ROUND %d :\n\n", round);
+        printf("Vos hp : %d, Les hp de Pépé Turbo : %d\n\n", Player1.hp, Enemy1.hp);
+        round ++;
+    }
 
     return 0;
 }
