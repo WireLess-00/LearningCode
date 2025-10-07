@@ -385,56 +385,68 @@ int main(void)
     printf("\n");
     printf("Plus vous vous raprochez plus l'odeur devient insuportable.\n");
     printf("\n");
+    printf("Vous vous rendez compte que Pépé Turbo est recouvert de Sauce Roquefort.\n");
     printf("\n");
-    printf("\n");
+    printf("Vous courrez pour commencer à l'attaquer !\n");
     printf("\n");
 
-    while ( Player1.hp > 0 && Enemy1.hp > 0 )
+    while ( Player1.hp >= 0 && Enemy1.hp >= 0 )
     {
-        printf("ROUND %d :\n\n", round);
-        printf("Choisis une compétences à utiliser :\n\n 1- Attaquer (- 5 hp)\n 2- Se soigner (+5 hp) \n3 - Double attaque (-8 hp pour l'ennemi mais aussi -2 pour toi)\n");
+        printf("DEBUT DU ROUND %d :\n\n", round);
+        printf("Choisis une compétences à utiliser :\n\n 1 - Attaquer (- 5 hp)\n 2 - Se soigner (+5 hp) \n 3 - Double attaque (-8 hp pour l'ennemi mais aussi -2 pour toi)\n\n");
         scanf("%d", &choiceskill);
 
         switch (choiceskill)
         {
         case Skill1:
-            Enemy1.hp = Enemy1.hp - 5;
-            printf("Bien joué, Pépé Turbo perd 5 hp !\n");
+            Enemy1.hp = Enemy1.hp - 6;
+            printf("\n");
+            printf("Bien joué, Pépé Turbo perd 6 hp !\n");
             break;
 
         case Skill2:
-            Player1.hp = Player1.hp + 5;
-            printf("Vous vous soignez, vous gagnez 5 hp !\n");
+            Player1.hp = Player1.hp + 4;
+            printf("\n");
+            printf("Vous vous soignez, vous gagnez 4 hp !\n");
             break;
 
         case Skill3:
-            Enemy1.hp = Enemy1.hp - 8;
-            Player1.hp = Player1.hp - 2;
-            printf("Ti é un tueur, Pépé Turbo perd 8 hp, mais tu en perd 2.\n");
+            Enemy1.hp = Enemy1.hp - 11;
+            Player1.hp = Player1.hp - 3;
+            printf("\n");
+            printf("Ti é un tueur, Pépé Turbo perd 11 hp, mais tu en perd 3.\n");
             break;
             
             default:
             break;
         }
 
-        printf("Pépé Turbo vous flanque la paté, vous perdez 5 hp...\n");
-        Player1.hp = Player1.hp - 5;
+        printf("\n");
+        printf("Pépé Turbo vous flanque la paté, vous perdez 6 hp...\n");
+        Player1.hp = Player1.hp - 6;
         
-        if (Enemy1.hp > 0)
+        if (Enemy1.hp <= 0)
             {
-                printf("Vous avez tuer Pépé Turbo, Fékicitations !\n");
+                printf("\n");
+                printf("Vous avez tuer Pépé Turbo, Félicitations !\n");
                 Player1.xp = Player1.xp + 100;
-                printf("Vous avez gagnez 100 points de Xp !\n");
+                printf("Vous avez gagnez 100 points d'Xp !\n");
+                printf("\n");
+                break;
             }
         else
             {
+                printf("\n");
                 printf("Vous avez perdue :C Vous êtes surement gay mais ce n'est pas grave.\n");
+                printf("\n");
             }
 
         printf("FIN DU ROUND %d :\n\n", round);
         printf("Vos hp : %d, Les hp de Pépé Turbo : %d\n\n", Player1.hp, Enemy1.hp);
         round ++;
     }
+
+    printf("Merci grace à vous ont vas pouvoir torturer Mémé Turbo pour lui faire avouer où sont les boules de Okarun <3\n");
 
     return 0;
 }
