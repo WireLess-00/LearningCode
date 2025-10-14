@@ -9,7 +9,7 @@ void printadd(float n1, float n2)/*Fonction pour additionner qui ne retourne auc
     /*On peut ajouter un return; seul mais cela nous fera focément sortir du code de la fonction*/
 }
 
-static int add(int p1, int p2)/*Static + Inline fonction très petite pour insérée directement dans le code donc opti si la machine ne juge pas ça opti elle ne vas pas le faire et vas chercher le code de la fonction dans un autre fichier, c'est pour ça que je suis obligé de rajouter static et de lui faire savoir quee c'est une fonction lier à seulement ce fichier*/
+static inline int add(int p1, int p2)/*Static jsp pk et Tom a pas aider + Inline fonction très petite pour insérée directement dans le code donc opti si la machine ne juge pas ça opti elle ne vas pas le faire et vas chercher le code de la fonction dans un autre fichier, c'est pour ça que je suis obligé de rajouter static et de lui faire savoir quee c'est une fonction lier à seulement ce fichier*/
 {
     return p1 + p2;
 }
@@ -56,8 +56,8 @@ int main(void)/*Main est bien une fonction qui retourne une valeur entière : re
     print2(x);
 
     printf("!! = %d\n", factorielle(factorielle(5))); /*Fonctionne mais Affiche 0 car overflow (dépassement de mémoire)*/
-
-    printf("%d\n", add(4,2));
+    
+    printf("%d\n", add(4, 2));
     
     return 0;
 }
