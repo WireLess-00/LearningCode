@@ -2,15 +2,25 @@
 
 void swap(int *var1, int *var2) /*On creer uen fonction pour swap la valeur des deux variables*/
 {
-    int swp = *var1;/*Grace a "*" on a acces au contenu de la var*/
+    int swp = *var1;/*Grace a "*" on a acces au contenu de la var car ont déférence*/
     *var1 = *var2;
     *var2 = swp;
 }
 
 /*Pointeur = Variable qui contient l'adresse d'une autre variable = 8 octets*/
 
+typedef struct
+{
+    int a;
+    int b;
+}STR;
+
 int main(void)
 {
+    STR s;
+    STR *ss = &s;
+    ss->a = 6; /*Pour pointer dans une structure ont utilise ->*/
+
     int v1 = 1;
     int v2 = 2;
 
@@ -30,6 +40,6 @@ int main(void)
     printf("AVANT = v1 = %d et v2 = %d\n",v1,v2);
     swap(&v1,&v2);
     printf("APRES = v1 = %d et v2 = %d\n",v1,v2);
-}
 
-/*Pour être sure que le pointeur est le seul qui pointe la var = ont ajoute * restrict p = &var*/
+    return 0;
+}
