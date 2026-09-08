@@ -7,7 +7,7 @@
 
 int main(void)
 {
-    submtom();
+    stars();
 
     return 0;
 }
