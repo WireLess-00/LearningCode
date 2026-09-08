@@ -185,9 +185,9 @@ int main(void)
     PlayerName();
     printf("\n");
 
-    /*
-    printf("Vous êtes envoyé au Japon sur une île pour combattre Pépé Turbo qui veut éliminer Mémé Turbo, seul problème si Pépé Turbo élimine Mémé Turbo elle ne nous révélera jamais ou est cacher la deuxième boule d'Okarun.\n\n");
+    printf("Vous êtes envoyé au Japon sur une île pour combattre Pépé Turbo qui veut éliminer Mémé Turbo, seul problème si Pépé Turbo élimine Mémé Turbo elle ne nous révélera jamais ou est cacher le trésor d'Okarun.\n\n");
     
+    /*
      while (Player1.roles != 0 && Player1.roles != 42  && Player1.roles != 666 && Player1.roles != 8) 
     {
         printf("Maintenant %c%c%c%c%c%c%c%c, choisissez une classe pour anéantir Pépé Turbo :\n\n0 - Ghost\n42 - Alien\n666- Possessed\n8 - Medium\n", Player1.name.namec1, Player1.name.namec2, Player1.name.namec3, Player1.name.namec4, Player1.name.namec5, Player1.name.namec6, Player1.name.namec7, Player1.name.namec8);
