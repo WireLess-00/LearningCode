@@ -2,8 +2,6 @@
 
 Ce dépôt retrace mon apprentissage du langage C : notes commentées directement dans le code, exercices pratiques et mini-projets. L'objectif était de comprendre en profondeur les fondamentaux du langage (gestion mémoire, pointeurs, structures, binaire) avant d'aller plus loin.
 
-> Note : ce dépôt porte sur le **C** (pas le C++). Les fichiers ne contiennent ni classes, ni STL, ni `std::` — c'est volontairement centré sur les bases bas niveau du langage.
-
 ## Structure du dépôt
 
 ```
