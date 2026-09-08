@@ -1,5 +1,5 @@
 /*#include <stdio.h> /*Un header (.h) = fichier qui contient des déclarations utilisées dans plusieurs fichiers sources .c.*/
-#include "subtom.h" /*Ont peut creer son header, permet de ne pas faire de coompilation séparée*/
+#include "stars.h" /*Ont peut creer son header, permet de ne pas faire de coompilation séparée*/
 
 /*extern void submtom(); /*Ont peut justes mettre le prototype de la fonction*/
 
