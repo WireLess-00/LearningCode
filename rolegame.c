@@ -1,17 +1,6 @@
 #include <stdio.h>
 #define PlayerName() printf("Votre pseudo est : %c%c%c%c%c%c%c%c\n", Player1.name.namec1, Player1.name.namec2, Player1.name.namec3, Player1.name.namec4, Player1.name.namec5, Player1.name.namec6, Player1.name.namec7, Player1.name.namec8)
 
-/*
-- On nous demande quel rôle on veut être
-- Png qui explique le monde au début du jeu (univers)
-- il a fini de parler, un combat démarre,
-- avoir un système de combat avec des hp des deux côtés
-- voir ceux de l'ennemi et les tiens
-- mini choix de compétences
-- Fin de combat avec système d'xp
-- Dialogue pour célébrer ton combat ou bien ta défaite
-*/
-
 typedef enum Genres
 {
     Male = 1,
@@ -88,13 +77,13 @@ int main(void)
 
     while (Player1.genres == 0) 
     {
-        printf("Choisissez votre genre :\n\n1 - Gros Male\n2 - Petite Femelle\n\n");
+        printf("Choisissez votre genre :\n\n1 - Male\n2 - Femelle\n\n");
         scanf("%d", &Player1.genres);
         printf("\n");
 
         if (Player1.genres == Male)
         {
-            printf("Vous avez dit Un Male virile ?\n\n1 - Oui\n2 - Non\n\n");
+            printf("Vous avez dit Male ?\n\n1 - Oui\n2 - Non\n\n");
         }
 
         scanf("%d",&sure);
@@ -359,7 +348,7 @@ int main(void)
         case Chaussonpommes:
             Player1.hp = Player1.hp - 5;
             printf("\n");
-            printf ("Mauvais choix gourmand !, Tu perds 5 points de vie.");
+            printf ("Mauvais choix !, Tu perds 5 points de vie.");
             printf("\n");
             break;
 
@@ -414,7 +403,7 @@ int main(void)
             Enemy1.hp = Enemy1.hp - 11;
             Player1.hp = Player1.hp - 3;
             printf("\n");
-            printf("Ti é un tueur, Pépé Turbo perd 11 hp, mais tu en perd 3.\n");
+            printf("Bravo, Pépé Turbo perd 11 hp, mais tu en perd 3.\n");
             break;
             
             default:
@@ -437,7 +426,7 @@ int main(void)
         else
             {
                 printf("\n");
-                printf("Vous avez perdue :C Vous êtes surement gay mais ce n'est pas grave.\n");
+                printf("Vous avez perdue :C Recommence !\n");
                 printf("\n");
             }
 
@@ -446,7 +435,7 @@ int main(void)
         round ++;
     }
 
-    printf("Merci grace à vous ont vas pouvoir torturer Mémé Turbo pour lui faire avouer où sont les boules de Okarun <3\n");
+    printf("Merci grace à vous ont vas pouvoir questionner Mémé Turbo pour lui faire avouer où est le trésor de Okarun <3\n");
 
     return 0;
 }
