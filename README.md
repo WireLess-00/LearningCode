@@ -21,7 +21,7 @@ apprentissage-c/
 │   └── rolegame/
 └── notes/
     └── GitHubBasics.md
-```
+``` 
 
 ## Détail des fichiers
 
@@ -42,8 +42,8 @@ apprentissage-c/
 ## Mini-projets
 
 - **[Calculatrice](mini-projets/calculatrice/)** — addition simple avec saisie utilisateur
-- **[Tic Tac Toe](mini-projets/tictactoe/)** — jeu à deux joueurs en console avec plateau 3x3
-- **[Role Game](mini-projets/rolegame/)** — mini RPG en console avec création de personnage et système de combat
+- **[Tic Tac Toe](mini-projets/tictactoe/)** — jeu à deux joueurs avec plateau 3x3 (console)
+- **[Role Game](mini-projets/rolegame/)** — mini RPG avec création de personnage et système de combat (console)
 
 ## Compiler et exécuter un fichier
 
