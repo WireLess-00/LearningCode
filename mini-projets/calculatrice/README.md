@@ -8,7 +8,7 @@ Petit programme en console qui demande deux nombres entiers à l'utilisateur et 
 2. Il demande une seconde valeur
 3. Il calcule et affiche le résultat de l'addition
 
-## Pistes d'amélioration
+## Améliorations
 
 - Ajouter la soustraction, multiplication, division
 - Gérer les erreurs de saisie
